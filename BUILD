@@ -13,7 +13,6 @@ cc_binary(
     deps = [
         "@envoy_wasm_api//:proxy_wasm_intrinsics",
     ],
-    visibility = ["//visibility:public"],
 )
 
 exports_files(["test_cpp.cc"])

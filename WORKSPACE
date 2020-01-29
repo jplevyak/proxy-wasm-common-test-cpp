@@ -33,10 +33,13 @@ git_repository(
     commit = "655310ca192a6e3a050e0ca0b7084a2968072260",
 )
 
-new_local_repository(
+new_git_repository(
     name = "envoy_wasm_api",
-    path = "../../../../../../api/wasm/cpp",
+    remote = "https://github.com/envoyproxy/envoy-wasm",
+    commit = "49f411875801c85fc25b869da77ef98cde3f7f65",
     workspace_file_content = 'workspace(name = "envoy_wasm_api")',
+    strip_prefix = "api/wasm/cpp",
+    patch_cmds = ["rm BUILD"],
     build_file = '//bazel/external:envoy-wasm-api.BUILD',
 )
 
